@@ -1,0 +1,6 @@
+apt-get update
+curl -sSL https://get.docker.com/ | sh
+sudo service docker stop 
+sudo docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock &
+docker run -d swarm join --advertise=13.82.30.117:2375 consul://119.9.43.151:8500
+
